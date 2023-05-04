@@ -20,28 +20,43 @@
     var CONFIG = {"hostname":"donkeyeee.github.io","root":"/LYZ.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://donkeyeee.github.io/LYZ.github.io/index.html">
+  <meta name="description" content="十二周，离大多数科目的结课考试，还有大概一个月的时间。中间我还得准备两次数模竞赛，英语六级。最近科研方面，柳老师还给我介绍了一个中科院的老师。看了他的一篇论文后，我感觉他对ML还是有比较深入的了解。我看看，能不能多接触一些项目吧。 星期六今天几乎花了一天在机器学习上。 上午看了一篇论文  这篇论文使用RF对水样进行溯源分析 写了个阅读笔记  下午回寝室后，就开始学RF有关内容。  虽然之前有一点点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI_STUDY日志-第十二周">
+<meta property="og:url" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="十二周，离大多数科目的结课考试，还有大概一个月的时间。中间我还得准备两次数模竞赛，英语六级。最近科研方面，柳老师还给我介绍了一个中科院的老师。看了他的一篇论文后，我感觉他对ML还是有比较深入的了解。我看看，能不能多接触一些项目吧。 星期六今天几乎花了一天在机器学习上。 上午看了一篇论文  这篇论文使用RF对水样进行溯源分析 写了个阅读笔记  下午回寝室后，就开始学RF有关内容。  虽然之前有一点点">
 <meta property="og:locale" content="zn_CN">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_17_2.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_20_2.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_23_1.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_25_1.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_31_1.png">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Titanic_cutaway_diagram.png/687px-Titanic_cutaway_diagram.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_110_1.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_134_0.png">
+<meta property="og:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_136_0.png">
+<meta property="article:published_time" content="2022-11-19T12:28:30.000Z">
+<meta property="article:modified_time" content="2023-05-02T02:01:00.971Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/output_17_2.png">
 
-<link rel="canonical" href="https://donkeyeee.github.io/LYZ.github.io/">
+<link rel="canonical" href="https://donkeyeee.github.io/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zn-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>AI_STUDY日志-第十二周 | Hexo</title>
   
 
 
@@ -139,385 +154,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/11/20/dairy-11-20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="مثبت">
-                <i class="fa fa-thumbtack"></i>
-              </span>
-            <a href="/LYZ.github.io/2022/11/20/dairy-11-20/" class="post-title-link" itemprop="url">dairy_11_20</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-11-20 03:08:38" itemprop="dateCreated datePublished" datetime="2022-11-20T03:08:38+08:00">2022-11-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-24 23:34:23" itemprop="dateModified" datetime="2022-11-24T23:34:23+08:00">2022-11-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="写在今晚失眠后"><a href="#写在今晚失眠后" class="headerlink" title="写在今晚失眠后"></a>写在今晚失眠后</h1><p>这两周一直睡的很晚，我以为是最近学的东西太杂了，想学的技能太多了，脑袋一会兴奋一会迟钝。<br>每晚上躺到床上，我会先刷一会B站。最近喜欢看异灵术老师的炉石视频，虽然我也很久没玩那游戏了，虽然这游戏好像也快凉凉了。</p>
-<p>忽然今晚上想到了好多以前的事情，干脆起来写一点东西。</p>
-<p>刚刚还在想，有那么多事情，怎么才能穿在一起呢？</p>
-<p>不如来聊一下炉石吧。</p>
-<h2 id="一切开始于古神降临之前"><a href="#一切开始于古神降临之前" class="headerlink" title="一切开始于古神降临之前"></a>一切开始于古神降临之前</h2><p>其实我也忘了入坑的时间了，不过我记得的是在炉石的第一个整年内入坑的。<br>大概是在冒险家协会和上古之神中间这段时间，也就是2015年。</p>
-<p><img src="https://cdn.biubiu001.com/p/ping/0/other/4b6756020a715d6655454d0e6eae21c0.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"></p>
-<p><img src="https://cdn.biubiu001.com/p/ping/0/other/15933456154496413a2edf4f501ccef6.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"></p>
-<p>一开始是由三个朋友带我入的坑，那时我初二。</p>
-<p>我记得在体育课的自由活动时间，我们几个人就会做到教学楼中间的一个楼梯上，因为初中学校修在山上，那里视野很好，向外能看到学校大门外的公路和一些矮房子，向内能看到整个操场，在山顶是我将来只待了半年时间的高中部。</p>
-<p>那时一个朋友拉着我说“玩炉石吧，这是真的靠脑子的游戏”，反正拉拉扯扯我也就注册了自己第一个账号。</p>
-<p>有段时间学校经常起雾，很浓但是和烧秸秆时的雾霾或者和北京的雾霾不同，那时的雾的的确确是水蒸气凝聚而成的。早上跑早操时，我们队列在操场离教学楼的另一侧，站在队列里是看不清楚开着灯的教学楼的，我就会想那会不会是克苏恩的眼睛，操场上播放的音乐倒成了尤格萨隆的低语。</p>
-<p>那时我学习方面很差，差到英语语文经常垫底，数学还算比较喜欢，就是自己特别粗心，所以说总成绩大概就是全班垫底的水平，平时可没少吃这件事情的亏呀。和不管是同班和外班的人关系都没处太好。</p>
-<blockquote>
-<p>因为我和另一个同班同学当时住在和外班的混合寝室，当时有人认为是我品行不端才被换到混寝的。其实后来我才知道，是那个同班同学把我选过去的。<br>为什么我会知道呢？因为那个同班同学后来到了初三搬走了，班主任又让我来选谁和我一起搬到混寝。</p>
-</blockquote>
-<p>Anyway，在初二时有人愿意找我玩，我是特别高兴的。家里电脑不是很好，所以说炉石作为手游，就成了我最喜欢的游戏。</p>
-<p>这时间玩的人也很多，班上很多男生都在玩，甚至我表哥，当时依旧进入大学，也在玩。我甚至会在周末和两三个同学约到公园旁边的一个肯德基里边做作业边玩炉石。</p>
-<h3 id="蛋蛋骑"><a href="#蛋蛋骑" class="headerlink" title="蛋蛋骑"></a>蛋蛋骑</h3><p>那时我做了我第一套比较强的套牌–蛋蛋骑</p>
-<p>时间太久我竟然都找不到卡组了，就用几张我比较喜欢的牌代替了。</p>
-<p>蛋蛋骑是一套快攻卡组，这是我喜欢这套卡组的原因。另一方面，我特别喜欢圣骑士这职业，一方面是觉得乌瑟尔真的很帅，一方面是因为佛丁出场的那一句：</p>
-<center>“信仰圣光吧！” </center>
-
-
-<p>因为这句话，即使是作为快攻卡组的蛋蛋骑我也会把提里奥带上。还有就是他亡语装备的那一把5-3的灰烬使者，帅的一批好吧。<br>而且看着那么多套着圣盾的白银小兵，莫名其妙的有安全感欸。</p>
-<p><img src="dairy-11-20/fx.png"><br><img src="dairy-11-20/FODING.png"></p>
-<p>我对魔兽世界中四大古神的故事也很感兴趣，不过今晚上也没时间写了，就先把那四位古神拉出来看看吧，毕竟是官方第一次送的橙卡。</p>
-<p><img src="dairy-11-20/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-20%20040203.png"></p>
-<p>这版本中很多卡都是围绕着克苏恩，有的能使克苏恩强化，有的能被克苏恩强化，克苏恩卡组也成了版本的主流，同时其他三个古神，亚煞极，尤格萨隆，恩佐斯也都各自引领了很多强力卡组，大哥流、法术流、亡语流，作为当时版本，影响力还是很不错的</p>
-<h3 id="死鱼骑"><a href="#死鱼骑" class="headerlink" title="死鱼骑"></a>死鱼骑</h3><p>这是我最喜欢的一套卡组，那时我整天都在想着怎么用好这一套卡组。</p>
-<p>死鱼骑有着两个特点：中后期卡组+OTK</p>
-<p>前期把几条鱼送了，后期两拨亡者归来，打出一波满血斩杀。</p>
-<p><img src="dairy-11-20/wzgl.png"></p>
-<p>因为亡者归来只能拉出死过的鱼，所以在OTK前要做好足够的准备，包括送鱼和清掉对面的嘲讽和压对面血线。</p>
-<p>有时候送的鱼的条数不同，斩杀线会有很大变化。要是当年学过随机过程，还能算一个期望，方差哈哈。</p>
-<p>我周末花了很多时间在这游戏上，有时候周内的晚上我家里人会把我接回去，我也可以趁机玩一会。</p>
-<p>后来，我也学起了带手机。带手机最大的作用就是玩炉石。</p>
-<p>但是，我在外人眼里的形象也在变化着。我的成绩变好了，因为有了物理，而且数学也不想以前只是细心就行。我的成绩在这段时间有了起色，虽然我语文还是依旧的一塌糊涂，啥都背不下来，只有理科还能让我在班上有一席之地。</p>
-<p>在那年的期末，我第一次考到了班上的12名。当我爸妈开心的要奖励我时，我没有要求什么。但是其实私底下我自己奖励了自己，就是以充值卡的形式，买了三个冒险模式：<br><img src="https://cdn.biubiu001.com/p/ping/0/other/1173322dcb69fec9fbc2410ffa682455.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"><br><img src="https://cdn.biubiu001.com/p/ping/0/other/4b6756020a715d6655454d0e6eae21c0.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"><br><img src="https://cdn.biubiu001.com/p/ping/0/other/03d1b97db9bc78d012ec3e26377ed815.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"></p>
-<h2 id="在加基森的疯狂-2016年末"><a href="#在加基森的疯狂-2016年末" class="headerlink" title="在加基森的疯狂 2016年末"></a>在加基森的疯狂 2016年末</h2><p><img src="https://cdn.biubiu001.com/p/ping/0/other/f5f361c9469ed34e5174769f4c7274d1.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"></p>
-<h3 id="污手党、暗金教、青玉帮"><a href="#污手党、暗金教、青玉帮" class="headerlink" title="污手党、暗金教、青玉帮"></a>污手党、暗金教、青玉帮</h3><p>总共就9个职业分为3大家族，污手党擅长buff自己的手牌随从，暗金教可以制造各种法术，青玉帮能够统领青玉大军。此版本有我们熟知的艾雅黑掌，卡扎库斯，海盗帕奇斯，也正是因为这个版本出现了炉石第一个真正意义上的后期最强卡组，青玉德，同时还有有史以来最强的毒瘤，海盗战。不管平衡如何，至少这是一个很有特色的版本。</p>
-<p><strong>这是我玩的最多的一个时期</strong></p>
-<p>这版本圣骑士并不强，我好像一开始在玩奶骑，一套比较贵强度也不高的卡组，但是好的是这卡组韧性很足。</p>
-<p>当时，出了青玉体系。德鲁伊有了青玉护符可把一个卡组急坏了。爆牌贼没了疲劳优势，面对德鲁伊自己爆牌手段很鸡肋，不过可以使用恩佐斯的占场效果，再加上小德的解场能力不太强，也算是可以玩。</p>
-<p>在我记忆中，有一次期中考试我成绩崩了。当时就有了退坑的想法，随便也想试一下从来没玩过的宇宙卡组。在那年的家长会时，我在寝室分解了我绝大多数的卡牌，当然除了提里奥，合了宇宙术和宇宙法。<br>但是即使我分解了大多数卡组也做不了一套完整的卡组。</p>
-<p>过了半个月，我又想玩了。于是借了我表哥的账号，那时他已经不玩了，好像是到了快工作的年龄了吧。<br><strong>这个账号我一直用到了现在</strong></p>
-<h3 id="疯狂的自由时光"><a href="#疯狂的自由时光" class="headerlink" title="疯狂的自由时光"></a>疯狂的自由时光</h3><p>这段时间我妈怀上了妹妹。但是，这并不顺利。那时妈刚好调整了上班单位，到了离我学校距离半个城市远的地方，其实也只有半小时车程，但是不能让孕妇天天跑那么远。所以到了后来，我们在她单位附近租了一间房子。那段时间我周末就会住到那个出租屋了，当然离不开的还是炉石。周末背完老师布置的中考地理和生物知识点后，我就会躺在床上玩炉石。待在一个陌生的房子里，我反而感觉自己轻松了很多。</p>
-<p>我妈抽背我课文时，我能看到她肚子渐渐大了起来。</p>
-<p>因为这段时间，爸妈注意力转移了一大部分出去。我周末有了更多自由的时间，我从学校附近的家骑自行车穿过半个城市到出租屋，有时还会一股脑骑到我们家刚搬来市区的房子旁。因为也在一个山上，而且坡度很大，我当时骑得很吃力。</p>
-<p>那时我不知道的是，在这个山坡下公路的另一侧就是我的第二个高中，我在那里待了我绝大部分的高中时间。</p>
-<p>到了我妈可以休产假了，我们就搬了回去，具体多久我也不知道。</p>
-<p>这段时间，我还经常约同学打游戏。三个好朋友，各选三个职业，就变成了三个帮派。也刚刚好，每个人喜欢用的职业刚好分别属于青莲帮，污手党，暗金教。我还记得，当时正值我成绩有所起色，数学老师让我当一个学习小组的组长，我一开始是想把“污手党”当作我们组的名字来着。</p>
-<blockquote>
-<p>写到这里，才想起来，好多不好的经历。反正如果没有成绩带来的一些影响，我和好多人关系也不至于那么差了。</p>
-</blockquote>
-<p>同时这段时间，爸妈在学习上并没有怎么催促我。但是我反而更加用功了，也不知道为什么。游戏也照样打，也在看动漫，有一个备用的手机虽然不能上网，但是我周末会下点动漫在上面，周内带到学校看。</p>
-<p>我记得，有一天下晚自习，我正和一些人在看动漫。我也不知道当时在想什么，敢在光天化日下，聚众玩手机。结果被寝室另一个班的班主任发现了，一番拉扯交出了手机。</p>
-<p>不过那天晚上，我很平静。想了很多，有很多都没想。甚至没有一点慌张和害怕，反而好奇，明天我的班主任会不会找我。</p>
-<p>第二天，一切如常，但是我知道手机已经从那个班主任到了我的班主任手里了。我没去要，我为什么要去要？只是一个二手手机罢了，当时我已经想到了备用方案，可以让我拿到我真正可以上网的手机。</p>
-<p>或许我的班主任也在等我去找她要手机吧。不过我一直没去，所以说直到这个学期结束，我在她家补课她才提起这件事情，说中考结束后还你。但是我早就偷渡了我真正的手机，那个被收走的二手手机，对我来说也就无所谓了。她也在班上说过这件事情，不过也是在我初三时了，以“连lyz的手机收了后，我到现在都也没还给他”的语气警告班上，不过我知道，这时候我已经不是她所警告的对象了。</p>
-<blockquote>
-<p>在我的朋友腿断了的那一个月的月考，我考到了全班的第一名。<br>有时，作为施助者，会被莫名其妙的优越感蒙蔽双眼，并且会忘了什么才是最应该做的事情。<br><img width='' src='dairy-11-20/cj1.png'></p>
-</blockquote>
-<hr>
-<h2 id="梦碎猛犸年"><a href="#梦碎猛犸年" class="headerlink" title="梦碎猛犸年"></a>梦碎猛犸年</h2><p>2017年4月7日，扩展包“勇闯安戈洛”上线。</p>
-<p><img src="https://cdn.biubiu001.com/p/ping/0/other/2b5ee8e0cd83b7264ebe7f61e0f74eb8.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"></p>
-<p>安戈洛版本最具创新的地方应该就是每个职业新增一张任务橙，让当时的玩家眼前一亮。当然版本之初有些职业任务橙过于强大，三进三出的5攻小野猪打你怕不怕，而且不怕debuff，更重要的是只要4次打出一张卡牌即可，后来无奈的削弱成5次，另外还有无限火球法重出江湖，一排墙的大螺丝战，无穷无尽的小鬼弃牌术，万龙奔腾铺场的速攻猎，佛光普照满血复活的亡语牧，不过也有不太成功的buff骑，大哥德，鱼人萨，由于任务橙的加入，让玩家体验到了不同的玩法和乐趣，创新度不错的版本.</p>
-<blockquote>
-<p>其实这个版本，相对于之前几个版本已经有无聊的趋势了。</p>
-</blockquote>
-<p>但是找到的一些文章却给了及其积极的评价：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv1936411/">炉石传说：猛犸年大总结，任务贼出世，牧师逆袭，它成为永恒经典</a></p>
-<hr>
-<p>在猛犸年开始的第二个月，我开始了我人生的第一次大考</p>
-<h3 id="中考"><a href="#中考" class="headerlink" title=" 中考"></a><strong><center> 中考</center></strong></h3><p>上大学我就一直想写一个会议录，记录一下我脑海中这一段昏暗迷茫乱七八糟的时间段。</p>
-<p>其实我在上高中时，就总结了这个中考。不过是从学习方面的，上了大学后，出人意料，那个记录了我整个高中写的回忆的本子就丢了，或许是往事不可回味的意思吧。反正我现在是懂了，这句话了。有些东西一想起来就绵绵不断，一件事拉着一件事，在脑海里晃个不停。</p>
-<p>在考试的前两天我还在玩炉石，用一个三手的手机。那手机，在我上高中后，坚持了几个月，就彻底打不开了。之后就作为真手机的置换物存在了。</p>
-<p>备考时，我天天回家，天天打游戏。但是只是小打，我还是觉得这游戏不是导致我后来的经历的主要因素。更多的是其他东西吧。</p>
-<p>我喜欢这张牌，因为可以在游戏中开包。</p>
-<p><img src="dairy-11-20/KTZ.png"></p>
-<p>还有法师的任务，到现在也是特别有趣的任务。<br>门批！</p>
-<p><img src="dairy-11-20/meng.png"></p>
-<p>考完时，我也在玩炉石，幸运的是这些人在我之后的很长一段时间直到现在，也和我保持这联系。不过和炉石已经没有关系了。</p>
-<img width='' src='dairy-11-20/game1.png'>
-
-
-<p>到了中考出分的那天晚上，我提前睡着了。</p>
-<p>第二天早上，是我爸把我叫醒的。与其说叫醒，不如说他坐在我的床边等我稍稍醒了，就告诉了我。他没直接说我考了多少分，只是说我不能去南山的火箭班了。<em>但是我后来去了比小火箭还要尖子班的尖子班，不过这是渡鸦年的事情了。</em></p>
-<p>考了多少分呢？当他说出来时，我还是很无感，和手机被隔壁班班主任收走时一样，不过有趣的是我想到了一张牌,638。</p>
-<p>不过这种无感，不代表我不会感到难受，但是难受来的比较晚，到狗头人时我才深刻的感受到。</p>
-<p><img src="dairy-11-20/638.png"></p>
-<h3 id="和狗头人一样"><a href="#和狗头人一样" class="headerlink" title="和狗头人一样"></a>和狗头人一样</h3><p>2017年12月8日，扩展包“狗头人与地下世界”上线。</p>
-<p><img src="https://cdn.biubiu001.com/p/ping/0/other/e85cb3c7b7882e9008d4b88d20387c08.png?x-oss-process=image/resize,w_1280/format,webp/quality,Q_90"></p>
-<blockquote>
-<p>又一个非常有诚意的版本，不光有重新定义并且耐玩的冒险模式，更是加入了全职业武器橙。这个版本下最具代表性的两个职业就是弑君贼和法术猎了，因为武器橙的加入，作为版本第一武器橙的弑君应该争议不大，同时也是由于DK的存在，不输青玉德的后期能力，也迫使暴雪将吸血药膏无情的削弱，从此便不再imba，至于法术猎，很多人戏称小型法术翡翠是猎人的法术橙，本身就不亏的效果，一个奥秘就稳赚，两个奥秘简直逆天的效果也是很多后期卡组中速卡组很难抵挡的一波，不仅如此，后期还有DK可以捏各种变态野兽，可以说前中后期没有明显短板，猎爹从此再次成为暴雪的爸爸</p>
-</blockquote>
-<p>中考结束后，我进入了我的第一个高中。</p>
-<pre><code>                                                                            -+
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/11/04/dairy-11-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="مثبت">
-                <i class="fa fa-thumbtack"></i>
-              </span>
-            <a href="/LYZ.github.io/2022/11/04/dairy-11-4/" class="post-title-link" itemprop="url">dairy_11_4</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-11-04 14:38:32" itemprop="dateCreated datePublished" datetime="2022-11-04T14:38:32+08:00">2022-11-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-15 20:36:20" itemprop="dateModified" datetime="2022-11-15T20:36:20+08:00">2022-11-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="写在班会后"><a href="#写在班会后" class="headerlink" title="写在班会后"></a>写在班会后</h1><p>今天又是忙碌的一天，除了白天八门课外，上午还开了场班会。<br>昨晚睡的很舒服，早上起床就很艰难。还是按时赶到了教室。<br>今天主要是讲成绩，也是从大学以来，我第一次在成绩方面被push。<br>欣慰的是看到了全班的成绩分布，我目前Gpa已经超过了上一届的年级第一。<br>同时后面的人也追的很紧，有些紧张的感觉了，这时候也不是能骄傲的时候呀。</p>
-<h2 id="上台总结"><a href="#上台总结" class="headerlink" title="上台总结"></a>上台总结</h2><p>老师讲完后，就要我们上台总结一下自己的大二和展望一下未来。<br>我因为在下节课报了一门外专业的专业课，就先上去说了。<br>要是早点知道要上去就好了，感觉有好多东西想说的。<br>刚好这节课老师在讲些题外的话，我就姑且把自己想的一些东西写一下。<br>之后再来完善吧。</p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p>这个bark是我上台时想说而没说的，对于我这种人格，经常会有这种情况。<br>对我感触最深的，肯定是开学初，转专业时老师想给我办的送别会。<br>对于外界关注我时，我是特别敏感的。</p>
-<blockquote>
-<p>我也不知道“针对”这个词对不对，以后再改吧，用在这里肯定是褒义的。<br>之前用的是针对，现在换成了关注感觉更准确一点。</p>
-</blockquote>
-<p>我把自己当作一个旁观者，而不是参与者。<br>感谢这个团体，让我有了归属感。</p>
-<h3 id="功利性"><a href="#功利性" class="headerlink" title="功利性"></a>功利性</h3><p>我目前将我大二的一些问题归咎为功利性的问题。<br>总是在想做这件事情，有没有用。<br>卷到最后，会觉得在环境有啥意思<br>只需要达到平均分的水平，就不会落后很多。<br>但是现在我认为，卷乃荒诞。</p>
-<h3 id="卷乃荒诞"><a href="#卷乃荒诞" class="headerlink" title="卷乃荒诞"></a>卷乃荒诞</h3><p>卷是表征，是资源不够的表征，要是人人都能保研，遍地都是清华，那还卷什么。<br>我总结的中国教育体制，不是更注重培养，而是筛选。<br>这是中国国内情况，和国外形势所导致的。<br>我们现在的卷就是产生于资源的有限和人欲望的无限。<br>更深层次的是，人与环境的矛盾。</p>
-<h3 id="西西弗斯的荒诞"><a href="#西西弗斯的荒诞" class="headerlink" title="西西弗斯的荒诞"></a>西西弗斯的荒诞</h3><p>我认为人人都有西西弗斯的影子。生活中每个人都是在推石头上山，但是石头终有落下的一天。当有一天，你停下来就会怀疑，自己之前是否有意义，紧接着就是未来是否有意义。因为石头总会落下，无论你是否亲眼见过。<br>这是会不会有一种，如梦幻泡影的感觉。<br>那生活就是没有意义的吗？<br>生活本身是无意义的，或者说人活着就是无意义的。<br>回答这个问题过后，我们可能有三个选择。</p>
-<ol>
-<li>无意义，那就自杀吧。北航国实楼，一跃解千愁。</li>
-<li>自己附加意义。求助于宗教，民族国家意识。说为了什么什么而活。加缪认为这是哲学的自杀。</li>
-<li>最后就是，面对人生的无意义，认识到人生的荒谬，并反抗。只有反抗可以改变命运，反抗让生活有了意义。</li>
-</ol>
-<p>当西弗斯每次到达山顶，心里一定是满足的，因为推石头就是他反抗诸神的手段。每一次推动石头都是无意义的，这种个人的努力和现实冷漠之间的对比，就是荒谬。但是我相信当他推动石头时，心里一定是满足的。为什么？因为这是他反抗诸神的唯一方法。诸神想让他在无意义中沉沦失望落魄，但是他是积极的反抗者。并不是歌颂苦难，反抗是出于愤怒的，出于看出了这件事的无意义，但又不得不做的荒诞。当有一天，西西弗斯积蓄了足以反抗诸神的力量，他一定会把石头掷向诸神，说一句<strong>fuck you life</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/05/26/dairy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="مثبت">
-                <i class="fa fa-thumbtack"></i>
-              </span>
-            <a href="/LYZ.github.io/2022/05/26/dairy/" class="post-title-link" itemprop="url">dairy</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-05-26 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-26T00:00:00+08:00">2022-05-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-07 22:13:30" itemprop="dateModified" datetime="2022-11-07T22:13:30+08:00">2022-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="五月26日-星期四-晴"><a href="#五月26日-星期四-晴" class="headerlink" title="五月26日 星期四 晴"></a>五月26日 星期四 晴</h1><p><del>今天又是摆大烂的一天</del><br>第一次在Github上写博客呀</p>
-<p>是不是有一种程序员的感觉了</p>
-<p>虽然现在还只会用md文件格式，<br>但是我已经看到一种叫赫蹏的中文页面排版，以后可以学学<br>刚刚学用md也只用了半个小时（？）   </p>
-<hr>
-<h2 id="今天是社团这学期最后一次活动了"><a href="#今天是社团这学期最后一次活动了" class="headerlink" title="今天是社团这学期最后一次活动了"></a>今天是社团这学期最后一次活动了</h2><p>来的人也不多，和平时一样<br>两个学期都是这样，也习惯了。<br>好像添加不了图片，寄！   </p>
-<h2 id="今天读了《庄子》和苏东坡集"><a href="#今天读了《庄子》和苏东坡集" class="headerlink" title="今天读了《庄子》和苏东坡集"></a>今天读了《庄子》和苏东坡集</h2><p><em>姑且试着写点摘抄吧</em></p>
-<p><strong>《留侯论》</strong></p>
-<blockquote>
-<p>古之所谓豪杰之士者，必有过人之节，人情有所不能忍者。匹夫见辱，拔剑而起，挺身而斗，此不足为勇也。<br>天下有大勇者，卒然临之而不惊，无故加之而不怒。此其所挟持者甚大，而其志甚远也。</p>
-</blockquote>
-<p><strong>《庄子》</strong></p>
-<blockquote>
-<p>知人之所为者，以其知之所知，以养其知之所不知，终其天年而不中道夭者，是知之盛也</p>
-</blockquote>
-<hr>
-<p>因为用md换行要输入\<br>所以说有点麻烦<br>现在试试一直不换行会有什么效果</p>
-<hr>
-<p><code>好像也还行吧</code><br>这周星期天就准备回家了<br>开心(≧∇≦)/   </p>
-<p><del>莫名其妙开始用颜文字了</del></p>
-<p>   现在的计划是坐动车回去，一路上可以看看风景</p>
-<p>听着车上不同口音的变换，窗外风景更替才别呀一番感觉呀</p>
-<blockquote>
-<p>取一地之精华，化身心之愉悦。</p>
-</blockquote>
-<p>希望有一天可以从南玩到北，再从黄河沿海一路南下到南方，<br>再沿着长江回来。记下一些风物人情，地理气候水文水貌。</p>
-<p><em>最近对河流也有了一点兴趣</em></p>
-<blockquote>
-<p>江汉西来，高楼下、蒲萄深碧。犹自带、岷峨云浪，锦江春色。<br>君是南山遗爱守，我为剑外思归客。对此间、风物岂无情，殷勤说。</p>
-</blockquote>
-<hr>
-<p>学校待着好闷呀！<br>今天晚上听到一个从图书馆里出来的人，大叫一声<br>也许是憋坏了？<br>想到易中天写的魏晋风度里写的，一些隐居的读书人，<br>每天早晚就在竹林里长啸</p>
-<blockquote>
-<p>啸，就是双唇收紧努起，让气流从舌尖吹出，大约相当于吹口哨。也可以用手指夹住嘴唇，或者将手指插入口中，发出的声音会更加尖锐响亮。</p>
-</blockquote>
-<p>没准像出山前的诸葛，阮籍等等都是被憋坏了吧</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
@@ -533,10 +173,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/11/19/AI-STUDY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8/" class="post-title-link" itemprop="url">AI_STUDY日志-第十二周</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          AI_STUDY日志-第十二周
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -575,7 +214,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>十二周，离大多数科目的结课考试，还有大概一个月的时间。中间我还得准备两次数模竞赛，英语六级。最近科研方面，柳老师还给我介绍了一个中科院的老师。看了他的一篇论文后，我感觉他对ML还是有比较深入的了解。我看看，能不能多接触一些项目吧。</p>
+        <p>十二周，离大多数科目的结课考试，还有大概一个月的时间。中间我还得准备两次数模竞赛，英语六级。最近科研方面，柳老师还给我介绍了一个中科院的老师。看了他的一篇论文后，我感觉他对ML还是有比较深入的了解。我看看，能不能多接触一些项目吧。</p>
 <h1 id="星期六"><a href="#星期六" class="headerlink" title="星期六"></a>星期六</h1><p>今天几乎花了一天在机器学习上。</p>
 <p>上午看了一篇论文</p>
 <ul>
@@ -2595,558 +2234,36 @@ Recall: 0.7280701754385965
 <p>Of course there is still room for improvement, like doing a more extensive feature engineering, by comparing and plotting the features against each other and identifying and removing the noisy features. Another thing that can improve the overall result on the kaggle leaderboard would be a more extensive hyperparameter tuning on several machine learning models. Of course you could also do some ensemble learning.</p>
 </blockquote>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/LYZ.github.io/tags/AI/" rel="tag"># AI</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/11/12/AI-STUDTY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/11/12/AI-STUDTY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8/" class="post-title-link" itemprop="url">AI_STUDTY日志_第十一周</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-11-12 23:13:28" itemprop="dateCreated datePublished" datetime="2022-11-12T23:13:28+08:00">2022-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-14 00:17:30" itemprop="dateModified" datetime="2022-11-14T00:17:30+08:00">2022-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>星期六花了一下午加一晚上时间想搞搞时间序列有关的神经网络的搭建。<br>下午主要是学了LSTM对于时间序列的预测。<br>一开始看视频入了下门。原本说使用pytorch来实现，不过视频里提到了一个比较轻量的框架<strong>keras</strong><br>里面有一些集成的数据库，统计学习方法里就基本上用的这个框架。<br>[LSTM时间序列预测任务项目实战，学不会UP主下跪，附赠课件+源码]</p>
-<p>虽然找到了，这个教程的源码，但是我的jupyter跑不出来。<br>每次进行model.fit时就会报错，报告内核没了，具体啥突然想不起来了。</p>
-<p>然后又在一个公众号上找到了一篇教程<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/KyzwCKyASjcSLtLS6vYTeg">使用 LSTM 进行新冠病例预测（Pytorch）</a><br>找到了疫情的数据，放到了<code>COVID-19-master</code>文件夹里</p>
-<p>确实能跑，但是test_loss很大。<br>教程上说可以通过一些方法减小成本：<br><a target="_blank" rel="noopener" href="https://blog.ailemon.net/2019/02/26/solution-to-loss-doesnt-drop-in-nn-train/">如何解决神经网络训练时loss不下降的问题</a></p>
-<p>也找到了另一篇LSTM的教程，里面对于股票的预测结果不错：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jpIAh9KNiFf0JG141BSUoQ">保姆级教程！使用 LSTM 进行多变量时间序列预测</a></p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><ul>
-<li>现在pytorch框架还没掌握好，有许多操作不会，学起进阶的，能工程运用的算法还很慢。</li>
-<li>没有改进算法的能力，虽然已经知道了改进的方向。</li>
-<li>还没有手撕完整流程的模型搭建。</li>
-<li>现在建立完整可以运行的LSTM模型，误差极大，能不能对实际建模起作用还是个问题。我的评价是不如ARIMA，毕竟切实可以操作的算法才是好算法。</li>
-<li>还需要解决SRAS建模的问题。现在想到了一种元胞自动机优化差分模型的方法，明天可以试试。</li>
-<li>现在突然决定jupyter运行效率不太行，之后可以试试pycharm实现工程问题的解决</li>
-</ul>
-<hr>
-<h1 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h1><h2 id="内核挂掉的问题"><a href="#内核挂掉的问题" class="headerlink" title="内核挂掉的问题"></a>内核挂掉的问题</h2><p>在查找了许多资料后，排除了几个问题：</p>
-<ul>
-<li>内存不够，使用一段代码释放之前的内存。亲测没用</li>
-<li>keras，tensorflow版本问题</li>
-</ul>
-<p>最后是加了段代码，import tensorflow 之后，keras的model才能正常运行，不是特别懂。<br>是没有设置环境变量吗？现在也不太想去检查了。<br>代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">import os</span><br><span class="line">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]=&quot;0&quot;</span><br><span class="line">tf.compat.v1.disable_eager_execution()</span><br><span class="line"></span><br><span class="line">hello=tf.constant(&#x27;Hello,TensorFlow&#x27;)</span><br><span class="line">config=tf.compat.v1.ConfigProto()</span><br><span class="line"></span><br><span class="line">config.gpu_options.per_process_gpu_memory_fraction = 0.9</span><br><span class="line">sess=tf.compat.v1.Session(config=config)</span><br><span class="line"></span><br><span class="line">print(sess.run(hello))</span><br></pre></td></tr></table></figure>
-
-<h2 id="星期天"><a href="#星期天" class="headerlink" title="星期天"></a>星期天</h2><p>使用公众号上的代码实现了BP神经网络，全流程复现了搭建过程。<br><strong>使用keras会真的方便很多</strong></p>
-<p>看了一下支持向量机SVM，今天状态不是特别好，只是看了个大概。<br>看有没有空做一下公式推导吧，其实原理是很简洁的。</p>
-<h3 id="代码日志"><a href="#代码日志" class="headerlink" title="代码日志"></a>代码日志</h3><ol>
-<li><p>杂项第四章：LSTM时间序列预测任务。</p>
-<ul>
-<li>第一次接触到了工业化的程序，怎么说呢？和当时做C的项目时的结构</li>
-<li>使用了KERAS框架，感觉简洁了很多</li>
-<li>我和这个CODER差距太大了，还完全领悟不了写的一些函数。</li>
-<li>如果有一天能复现这一个文件夹的框架，就学的差不多了</li>
-</ul>
-</li>
-<li><p>make_LSTM0_come_true.ipynb</p>
-<ul>
-<li>另外一篇使用LSTM实现疫情预测的公众号。</li>
-<li>是用pytorch实现的</li>
-<li>但是效果非常不好。loss一直降不下来，现在也分析不出来</li>
-<li>感觉还是使用keras简单些</li>
-</ul>
-</li>
-<li><p>LSTM实现_keras</p>
-<ul>
-<li>使用keras实现了LSTM。</li>
-<li>回归环境数据，模型效果还不错</li>
-<li>还没细看，毕竟是和专业有关，之后要仔细看看</li>
-</ul>
-</li>
-<li><p>还做了个plotly的地图可视化，之后可以把轮子造好点</p>
-</li>
-</ol>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/LYZ.github.io/2022/11/12/AI-STUDTY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8/" rel="prev" title="AI_STUDTY日志_第十一周">
+      <i class="fa fa-chevron-left"></i> AI_STUDTY日志_第十一周
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/LYZ.github.io/2022/11/20/dairy-11-20/" rel="next" title="dairy_11_20">
+      dairy_11_20 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/11/06/AI-STUDTY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E5%91%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/11/06/AI-STUDTY%E6%97%A5%E5%BF%97-%E7%AC%AC%E5%8D%81%E5%91%A8/" class="post-title-link" itemprop="url">AI_STUDTY日志_第十周</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-11-06 21:43:50" itemprop="dateCreated datePublished" datetime="2022-11-06T21:43:50+08:00">2022-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-19 20:28:33" itemprop="dateModified" datetime="2022-11-19T20:28:33+08:00">2022-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>2022.11.6</p>
-<h1 id="第十周学习日志"><a href="#第十周学习日志" class="headerlink" title="第十周学习日志"></a>第十周学习日志</h1><h2 id="一、-pytorch"><a href="#一、-pytorch" class="headerlink" title="一、 pytorch"></a>一、 pytorch</h2><ol>
-<li>配置好了pytorch。使用conda进行虚拟环境管理，创建了含有2021年版本的pytorch以及CUDA、cuDNN</li>
-<li>找好了源代码。</li>
-<li>过完了前五章内容，完成了一个预训练网络的加载。<em>ResNet 卷积神经网络</em>。<ul>
-<li>不过对张量的掌握还不够，一些API的具体使用也不了解。</li>
-<li>要先把数据加载和预处理的操作掌握了，复习一下CLASS的操作。</li>
-<li>之后主要是在实战中学习了。—&gt; <strong>kaggle</strong></li>
-</ul>
-</li>
-</ol>
-<h2 id="二、-统计学习方法"><a href="#二、-统计学习方法" class="headerlink" title="二、 统计学习方法"></a>二、 统计学习方法</h2><ol>
-<li>概论的部分和入门时，学的东西差不多，就跳过了。包括正则化、泛化、感知机之类的。</li>
-<li>k近邻法（KNN）终于接触到了之后可能考虑使用的算法之一。想不到还挺基础的。</li>
-<li>决策树。KNN也有用树实现的方式（Kd树），是使用了数据结构来优化算法能力。好的是，sklean里面已经有了包装好了的API，在李航博士的源代码中，就使用了这些API。<ul>
-<li>对<code>sklearn.neighbors.KNeighborsClassifier()</code> 之类的应该碰到了就多了解了解。</li>
-<li>涉及到了熵、信息增益等新概念。还有可以简化信息熵的基尼系数。</li>
-<li>主要是有ID3和C4.5算法，还涉及了分类和回归树CART</li>
-<li>与RF有关联，出现了与第二个目标算法相关的内容。可以说这周学习内容收益很大了。</li>
-</ul>
-</li>
-<li>朴素贝叶斯。基于贝叶斯定律和独立条件假设的分类方法。对feature要求比较高。感觉一般。</li>
-<li>逻辑斯蒂回归LR，以及最大熵模型。学了一点点，感觉有点难度了。<ul>
-<li>涉及到了用最大似然估计进行逻辑斯蒂模型回归。</li>
-<li><strong>最大熵原理，没看懂</strong>这周好像也没时间看了。</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/09/01/%E4%BB%BF%E8%87%AA%E6%98%8E%E6%9C%AC%E5%BF%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/09/01/%E4%BB%BF%E8%87%AA%E6%98%8E%E6%9C%AC%E5%BF%97/" class="post-title-link" itemprop="url">仿自明本志</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-09-01 02:53:01" itemprop="dateCreated datePublished" datetime="2022-09-01T02:53:01+08:00">2022-09-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-07 22:15:25" itemprop="dateModified" datetime="2022-11-07T22:15:25+08:00">2022-11-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="仿自明本志"><a href="#仿自明本志" class="headerlink" title="仿自明本志"></a>仿自明本志</h1><p>九月初，下午刚把蚊帐搭好，晚上却稍感炎热，晚上又喝了酒，辗转着睡不着，索性拿了电脑到了宿舍一楼。</p>
-<p>高考结束，我尚不足18，来到校园一无所知。甚至为何来这学校都是稀里糊涂，后来跟好多人聊过这个问题，其中大多都会回答“成绩达到了就来了”，然后我会说，我也一样。这大概也是命里作怪，身边这样说的人云云。</p>
-<p>今日又是一年新大一入学。两年前，我非善社交应酬之人，于人际一窍不通，其他方面除了考试也无一技之长，抛下一瞬的辉煌后，是一种虚无之感。恐被真有识之士所见愚，所以摆着摆着，靠着烤漆复习，度过了第一学期。然数学方面始终不得要领，纵使我大一下打算重整旗鼓，最后也落下了一个不大不小的问题。所幸化学不错。</p>
-<p>大一过后，我和同级比起来仍算年少，所欲不过是上研究生罢了。大学后兴趣早不在学习上，专业好坏是否喜欢倒也无所谓了，我本愚钝不善思考，只知道读下去就会有收获。所以说大一是<strong>茫</strong>的。</p>
-<p>来环境后，顾视同级中，我成绩不算出众，但尚有一争之力。<strong>故始志力学习，其中感受与高中无异</strong>。思来想去，还是一个“<em>痴</em>”字。痴于安逸，痴于那一纸文凭，便开启了涡轮增压模式。如果说我是否除了成绩的收获，我还是格外喜欢两门专业课，工程力学和物理化学，也就是那时最难的两门课。那也是我大学以来最喜欢的两位老师啦，<del>不止是给分高</del>。这时我才有了一种想把我所学知识用于实践的兴奋。除此以外，我更多的是煎熬和难受。在其他科目，我遇到难的内容会焦虑讲的会不会考，遇到简单点的却在焦虑记不记得住。到期末又加两项，学的有没有用，学的会不会用。</p>
-<p>今天喝酒，和朋友说到了“<strong>研</strong>”这个问题。说是大一迷，大二痴，大三悟。那一个个名额就像小说中的九阴真经，那我一开始就和部分人一样痴，拿到了一点但没完全得到又像梅超风。当有能力拿到时，就像从桃花岛上出来的周伯通，又不想要了。感觉比喻也不太恰当。不过大意于此吧。</p>
-<p>大二上GPA单学期已是让我满意了。然又是如高考结束后的那种虚无感，让我的喜悦变成了浮躁。那时我开始想着换一个环境，一语双关了哈哈。如果说有人以为是我有了独孤求败之感，我还是敬谢不敏了，都看到这里了就继续看吧。大二下开始时，这念头只是萌芽。大二下焦虑更甚，痴到了不去清华都不行的地步。这只是短暂的，所谓物极必反，那时候课程就像一坨浆糊，打上去不硬，但是前进速度很慢，总是学着很累，也不知道学到了什么。所以没错，<strong>我摆了</strong>！！那时我是割裂的，卷摆参半，但是两方都不得齐全。那种感觉就像庄子说的“<em>日夜相代乎前，而莫知其所萌</em>”。最终让我走的就是这种感觉，至于说什么未来担忧抑或是骄傲自大，全是不实的。</p>
-<p>虽说大二卷+摆，但是成绩也算是挤进前列了。这让我想到了，段誉和王语嫣的故事。王语嫣也算是段誉的心魔了，她去哪段誉都追着。突然想来，这故事与我经历又有颇多相似。段誉遇到王语嫣时，正值远离故乡还惨遭命运作弄，中间舔狗行为暂且不提，最后二人也未在一起。因为段誉看破了心魔，看到了王语嫣并非是他心里的神仙姐姐，她身上诸多之前未见之处也浮现出来。</p>
-<p>写到这里时，东方即白，言尽于此吧。</p>
-<hr>
-<p>关于我对卷成绩的思考，可以看看<a href="">卷乃荒诞</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/08/23/dairy5-8-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/08/23/dairy5-8-23/" class="post-title-link" itemprop="url">学习日志 9月</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-08-23 20:42:23" itemprop="dateCreated datePublished" datetime="2022-08-23T20:42:23+08:00">2022-08-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-07 22:13:40" itemprop="dateModified" datetime="2022-11-07T22:13:40+08:00">2022-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <span id="more"></span>
-
-<h1 id="9-6"><a href="#9-6" class="headerlink" title="9.6"></a>9.6</h1><p>数据结构到了二叉树，学的有些艰难，一直停留在书上代码，完全不能实践。基础理论差不多了，就是在逻辑上差点火候。<br>数据结构方面学习有点难度，时间和精力有点跟不上了。可能现阶段还需要赶一下项目进度。<br><strong>今天之后就放弃二叉树了，拖得太久了，节奏乱了。</strong><br>下一步考虑重回python，试试学学深度学习，matlab之类的。不过也是中秋以后了。或者C++？<br>数学竞赛进度也有几天没有推进了，看来还是有必要推进一点了。不说拿到多大奖，只是重学一下数学也是不错的。<br>那决定明天开始要赶数学竞赛的进度了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/08/12/dairy4-8-12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/08/12/dairy4-8-12/" class="post-title-link" itemprop="url">dairy4_[8.12]</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-08-12 22:19:05" itemprop="dateCreated datePublished" datetime="2022-08-12T22:19:05+08:00">2022-08-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-07 22:13:37" itemprop="dateModified" datetime="2022-11-07T22:13:37+08:00">2022-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="8-12"><a href="#8-12" class="headerlink" title="8.12"></a>8.12</h2><p>下定决心集中精力学习计算机相关内容已经满一个月。</p>
-<h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p>到目前8月中旬，我已经完成了C语言的基础课程<br>在洛谷、PAT上刷了50来到题，但都是基础，这个还拿不出台面，难度不大，且独立完成度并不高。<br>开始学习数据结构，到了四分之一的位置。<br>数学竞赛方面，已经准备好了复习资料和制定了初步计划。</p>
-<h2 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h2><p>从七月中旬到八月中旬，一个月时间，确实在编程方面实现了一个突破，入门了C语言。<br>为了制定更长远的学习计划，加了一些组织，途径是B站-&gt;微信orQQ。增强了认识，也获得了一些资料和制定了学习路径。同时也解决了学习环境问题。<br>在学习路径的制定过程中，获得了一些有偿或无偿的帮助，比我独立摸索，要来的快一些，也有了一些成就感。</p>
-<p><strong>总的来说只是缓慢而且不平稳的进行着学习进度。</strong><br><em>其他的明天写吧</em></p>
-<p>到了16号我才准备来接着写。<br>这几天都没有按计划来学习，晚上睡得太晚，早上要到九点才起床，又小忙了一下家里面的事情。接下来的小学期又是我意料之外的事情了，目前看来接下来两周要抽出一定时间来做小学期的作业，麻烦！！！<br>现在可能要壮士断腕了，准备先放弃数学竞赛的学习，转而专心于准备下个月初的PAT了，只有半月了，但是目前进度不太行呀。</p>
-<ul>
-<li>作息不够规律，晚上睡得太晚</li>
-<li>做题前没有思考清楚，每道题需要的时间太久。这可能是因为学习数据结构中，没有及时实现书上的代码，所以说每次要从头思考代码。就是代码基础还不够。</li>
-<li>注意力不够集中呀。用电脑时总会被自己打扰，专注时间不长，也许和作息也有点关系。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zn-CN">
-    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2022/05/31/dairy3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/LYZ.github.io/2022/05/31/dairy3/" class="post-title-link" itemprop="url">dairy3</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2022-05-31 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-31T00:00:00+08:00">2022-05-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2022-11-07 22:13:34" itemprop="dateModified" datetime="2022-11-07T22:13:34+08:00">2022-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/LYZ.github.io/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在家隔离了，无聊来看看纪录片和书<br>有一种想法是<br>把自己干过的事情写下来<br>不然一天跟虚度一样</p>
-<hr>
-<h2 id="电影"><a href="#电影" class="headerlink" title="电影"></a>电影</h2><p>绣春刀</p>
-<h2 id="纪录片"><a href="#纪录片" class="headerlink" title="纪录片"></a>纪录片</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ss28973?t=1553&spm_id_from=333.1007.top_right_bar_window_history.content.click">一堂好课</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ss33042?spm_id_from=666.25.top_right_bar_window_history.content.click">我住在这里的理由</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -3199,6 +2316,7 @@ Recall: 0.7280701754385965
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%9F%E6%9C%9F%E5%85%AD"><span class="nav-number">1.</span> <span class="nav-text">星期六</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0"><span class="nav-number">2.</span> <span class="nav-text">机器学习分类算法实战笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0-1"><span class="nav-number">3.</span> <span class="nav-text">机器学习分类算法实战笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.1.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">3.2.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E5%86%85%E5%AE%B9"><span class="nav-number">4.</span> <span class="nav-text">实战内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Getting-the-Data%C2%B6"><span class="nav-number">4.1.</span> <span class="nav-text">Getting the Data¶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2-%E5%88%86%E6%9E%90-Data-Exploration-Analysis"><span class="nav-number">4.2.</span> <span class="nav-text">数据探索&#x2F;分析(Data Exploration&#x2F;Analysis )</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B-Age-and-Sex"><span class="nav-number">4.2.1.</span> <span class="nav-text">数据分析之 Age and Sex:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embarked-Pclass-and-Sex"><span class="nav-number">4.2.2.</span> <span class="nav-text">Embarked, Pclass and Sex:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pclass"><span class="nav-number">4.2.3.</span> <span class="nav-text">Pclass:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SibSp-and-Parch"><span class="nav-number">4.2.4.</span> <span class="nav-text">SibSp and Parch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">4.3.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="nav-number">4.3.1.</span> <span class="nav-text">缺失值处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96%E7%89%B9%E5%BE%81"><span class="nav-number">4.3.2.</span> <span class="nav-text">转化特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Categories-%E5%88%9B%E5%BB%BA%E7%B1%BB%E5%88%AB%EF%BC%9A"><span class="nav-number">4.3.3.</span> <span class="nav-text">Creating Categories:创建类别：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Creating-new-Features"><span class="nav-number">4.4.</span> <span class="nav-text">Creating new Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Age-times-Class"><span class="nav-number">4.4.1.</span> <span class="nav-text">Age times Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fare-per-Person"><span class="nav-number">4.4.2.</span> <span class="nav-text">Fare per Person</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B-Building-Machine-Learning-Models"><span class="nav-number">4.5.</span> <span class="nav-text">构建机器学习模型 Building Machine Learning Models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%EF%BC%88SGD%EF%BC%89%E5%AD%A6%E4%B9%A0"><span class="nav-number">4.5.1.</span> <span class="nav-text">随机梯度下降（SGD）学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Random-Forest"><span class="nav-number">4.5.2.</span> <span class="nav-text">Random Forest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic-Regression"><span class="nav-number">4.5.3.</span> <span class="nav-text">Logistic Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN"><span class="nav-number">4.5.4.</span> <span class="nav-text">KNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-Naive-Bayes"><span class="nav-number">4.5.5.</span> <span class="nav-text">Gaussian Naive Bayes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Perceptron-%E6%84%9F%E7%9F%A5%E6%9C%BA"><span class="nav-number">4.5.6.</span> <span class="nav-text">Perceptron 感知机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-SVC"><span class="nav-number">4.5.7.</span> <span class="nav-text">Linear SVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">4.5.8.</span> <span class="nav-text">决策树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Which-is-the-best-Model"><span class="nav-number">4.6.</span> <span class="nav-text">Which is the best Model ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="nav-number">4.7.</span> <span class="nav-text">k折交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="nav-number">4.8.</span> <span class="nav-text">随机森林</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-number">4.8.1.</span> <span class="nav-text">功能重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9A"><span class="nav-number">4.8.2.</span> <span class="nav-text">结论：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Training-random-forest-again"><span class="nav-number">4.8.3.</span> <span class="nav-text">Training random forest again:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E6%95%B4"><span class="nav-number">4.9.</span> <span class="nav-text">超参数调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E8%AF%84%E4%BB%B7%E6%96%B9%E5%BC%8F"><span class="nav-number">4.10.</span> <span class="nav-text">更多评价方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Confusion-Matrix-%E6%B7%B7%E6%B2%8C%E7%9F%A9%E9%98%B5"><span class="nav-number">4.10.1.</span> <span class="nav-text">Confusion Matrix 混沌矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Precision-and-Recall-%C2%B6"><span class="nav-number">4.10.2.</span> <span class="nav-text">Precision and Recall:¶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F-Score"><span class="nav-number">4.10.3.</span> <span class="nav-text">F-Score</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%BE%E5%BA%A6%E5%8F%AC%E5%9B%9E%E6%9B%B2%E7%BA%BF-Precision-Recall-Curve"><span class="nav-number">4.10.4.</span> <span class="nav-text">精度召回曲线 Precision Recall Curve</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9Fsubmission"><span class="nav-number">4.11.</span> <span class="nav-text">结束submission</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E6%80%BB%E7%BB%93"><span class="nav-number">5.1.</span> <span class="nav-text">原总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
