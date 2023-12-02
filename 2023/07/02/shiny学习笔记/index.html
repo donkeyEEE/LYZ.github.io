@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/LYZ.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/LYZ.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/LYZ.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/LYZ.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/LYZ.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/LYZ.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"donkeyeee.github.io","root":"/LYZ.github.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="项目要求做一个可以交互的网页，因为R老师已经使用shiny帮我做了一个demo了，所以接下来我需要进一步完善整个网页。 我现在有两周完成产品，时间应该还比较充裕，可以从头学学shiny。并且网络上关于shiny for python的资料真的很少，所以这一次我也想尝试一边学习一边做一些笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shiny学习笔记">
+<meta property="og:url" content="https://donkeyeee.github.io/LYZ.github.io/2023/07/02/shiny%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="驴哲的个人博客">
+<meta property="og:description" content="项目要求做一个可以交互的网页，因为R老师已经使用shiny帮我做了一个demo了，所以接下来我需要进一步完善整个网页。 我现在有两周完成产品，时间应该还比较充裕，可以从头学学shiny。并且网络上关于shiny for python的资料真的很少，所以这一次我也想尝试一边学习一边做一些笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shiny.rstudio.com/py/docs/assets/vscode.png">
+<meta property="og:image" content="https://shiny.rstudio.com/py/docs/assets/vscode.png">
+<meta property="og:image" content="https://shiny.rstudio.com/py/docs/assets/reactive-flow.svg">
+<meta property="article:published_time" content="2023-07-02T12:20:05.000Z">
+<meta property="article:modified_time" content="2023-12-02T16:23:06.522Z">
+<meta property="article:author" content="YuZhe Li">
+<meta property="article:tag" content="计算毒理学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shiny.rstudio.com/py/docs/assets/vscode.png">
+
+<link rel="canonical" href="https://donkeyeee.github.io/LYZ.github.io/2023/07/02/shiny%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>shiny学习笔记 | 驴哲的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/LYZ.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">驴哲的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Refresh in 2023</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/LYZ.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/LYZ.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://donkeyeee.github.io/LYZ.github.io/2023/07/02/shiny%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/LYZ.github.io/images/avatar.gif">
+      <meta itemprop="name" content="YuZhe Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="驴哲的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          shiny学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-02 20:20:05" itemprop="dateCreated datePublished" datetime="2023-07-02T20:20:05+08:00">2023-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-03 00:23:06" itemprop="dateModified" datetime="2023-12-03T00:23:06+08:00">2023-12-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/LYZ.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>项目要求做一个可以交互的网页，因为R老师已经使用shiny帮我做了一个demo了，所以接下来我需要进一步完善整个网页。</p>
+<p>我现在有两周完成产品，时间应该还比较充裕，可以从头学学shiny。并且网络上关于shiny for python的资料真的很少，所以这一次我也想尝试一边学习一边做一些笔记。<br><img title src="https://shiny.rstudio.com/py/docs/assets/vscode.png" alt width="421" data-align="center"></p>
+<span id="more"></span>
+
+<p>因为shiny对vscode的支持很好，所以我没有用jupyter，而是又尝试了一下在vscode上配置python。不过烦人的是，我几乎花了一晚上时间尝试在vscode上激活conda虚拟环境，主要是因为我的机器学习库都在Miku环境中。尝试了一系列操作，主要是修改setting.json或者lauch.json还有修改什么powershell，虽然一直在使用vscode，但是我对其的认识还只停留在使用上，如此简单但是功能强大的软件，其实值得去学学其原理。</p>
+<p>记录一下学习代码的位置：E:\学习\python\py_codbase\shiny_notes<br>官方文档链接：<a target="_blank" rel="noopener" href="https://shiny.rstudio.com/py/docs/overview.html">https://shiny.rstudio.com/py/docs/overview.html</a></p>
+<p>现在也遇到些问题</p>
+<ul>
+<li>在我瞎几把设置vscode的编译器后，在每次开始调试后，终端termail的命令前都会多一个地址。</li>
+<li>所以说需要修改命令才可以开始调试</li>
+</ul>
+<p>在安装时注意到：</p>
+<blockquote>
+<p>您有时可能需要强制安装我们软件包的更新版本，因为它们正在开发中。这可以通过以下方式完成：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade shiny htmltools</span><br></pre></td></tr></table></figure>
+
+<p><strong>Running</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shiny create . </span><br></pre></td></tr></table></figure>
+
+<p>创建一个app.py作为静态网页接口，也是编写代码的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shiny run --reload</span><br></pre></td></tr></table></figure>
+
+<p>在命令行中加载网页</p>
+<p>理想的编辑环境：<br><img title src="https://shiny.rstudio.com/py/docs/assets/vscode.png" alt width="421" data-align="center"></p>
+<hr>
+<p>Shiny applications consist of two parts: </p>
+<ul>
+<li>the user interface (or <strong>UI</strong>), </li>
+<li>and the <strong>server function</strong>. </li>
+</ul>
+<p>These are combined using a <code>shiny.App</code> object.</p>
+<h3 id="网页逻辑反应流"><a href="#网页逻辑反应流" class="headerlink" title="网页逻辑反应流"></a>网页逻辑反应流</h3><p><img src="https://shiny.rstudio.com/py/docs/assets/reactive-flow.svg"></p>
+<p>shiny网页前端总体分两个部分。app_ui是作为控制网页布局样式的。这里<code>ui.input_slider</code>是设置了一个slider作为数据输入，用户通过移动slider来控制输入数值”<em>n</em>“。而n作为输入，被传入到server函数中，进行逻辑运算。再server中，通过<code>@output</code>和<code>@render.text</code>，来修饰txt函数。前者表示函数结果应该被显示在网页上，后者表示结果是文本（e.g.其肯定不是图像）。而txt的输出被传到app_ui中，并在ui.output_text_verbatim中进行展示。</p>
+<h4 id="输入函数"><a href="#输入函数" class="headerlink" title="输入函数"></a><a target="_blank" rel="noopener" href="https://shiny.rstudio.com/py/docs/inputs.html">输入函数</a></h4><p>数值类型输入<br><code>ui.input_slider</code><br><code>ui.input_numeric</code></p>
+<p>选择输入<br>当multiple = True时，可以选择多个文本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from shiny import ui, App</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line"># A list of Python&#x27;s built-in functions</span><br><span class="line">choices = list(filter(lambda x: re.match(r&#x27;[a-z].*&#x27;, x), dir(__builtins__)))</span><br><span class="line"></span><br><span class="line">app_ui = ui.page_fluid(</span><br><span class="line">    ui.input_selectize(&quot;x1&quot;, &quot;Selectize (single)&quot;, choices),</span><br><span class="line">    ui.input_selectize(&quot;x2&quot;, &quot;Selectize (multiple)&quot;, choices, multiple = True),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">app = App(app_ui, None)</span><br></pre></td></tr></table></figure>
+
+<p>ui.input_checkbox_group(“x2”, “Checkbox group”, choices) 接口支持多输入</p>
+<h3 id="输出控制"><a href="#输出控制" class="headerlink" title="输出控制"></a>输出控制</h3><p>Outputs create a spot on the webpage to put results from the server.</p>
+<p>输出支持静态图像，文字，甚至是地图。<br>找到了一个地图可视化库<a target="_blank" rel="noopener" href="https://ipyleaflet.readthedocs.io/en/latest/usage/index.html">ipyleaflet</a>，支持很多可交互式操作</p>
+<hr>
+<h3 id="sever-function"><a href="#sever-function" class="headerlink" title="sever function"></a>sever function</h3><blockquote>
+<p>When you define an output function, Shiny makes it reactive, and so it can be used to access input values.</p>
+</blockquote>
+<p>在逻辑函数中，需要先定义函数才能获取input。</p>
+<hr>
+<h3 id="响应式编程-reactive-programming"><a href="#响应式编程-reactive-programming" class="headerlink" title="响应式编程  reactive programming"></a>响应式编程  reactive programming</h3><p>At the heart of Shiny is a reactive programming engine. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@reactive.Calc</span><br><span class="line">def double_x():</span><br><span class="line">    return input.x() * 2</span><br><span class="line"># Then we can use the reactive calculation in an output:</span><br><span class="line"></span><br><span class="line">@output</span><br><span class="line">@render.text</span><br><span class="line">def txt():</span><br><span class="line">    return f&quot;x * 2 is &#123;double_x()&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p>一个”reactive.Calc”与一个普通函数的主要区别在于它尝试通过使用缓存来最小化执行的工作量。当”reactive.Calc”运行时，它会缓存其最近的计算结果，并简单地返回该缓存值，直到”Calc”被标记为失效。</p>
+<p>什么是”失效（invalidated）”？像”reactive.Calc”、”reactive.Effect”（还有”@output”函数）这样的响应式对象，在其所依赖的响应式输入发生变化时会被标记为失效。例如，如果”double_x()”函数使用了”input.x()”，那么如果用户改变了”input.x()”的值，”double_x()”就会被标记为失效。然后，”double_x()”会使其依赖的任何其他响应式对象失效。在我们的示例中，它会使输出”txt”失效。</p>
+<p>当输出”txt”被标记为失效后，它会重新执行，重新执行时会调用”double_x()”。由于”double_x()”被标记为失效，它会重新执行（而不是简单地返回缓存的值），然后它会读取”input.x()”的新值。</p>
+<h4 id="控制响应函数-Controlling-reactivity-with-isolate-and-reactive-event"><a href="#控制响应函数-Controlling-reactivity-with-isolate-and-reactive-event" class="headerlink" title="控制响应函数 Controlling reactivity with isolate() and @reactive.event()"></a>控制响应函数 Controlling reactivity with isolate() and @reactive.event()</h4><p>通常情况下，当响应式函数的任何响应式输入发生变化时，它都会被标记为失效（并重新执行）。所谓响应式输入，不仅指来自用户的输入，比如”input.x()”，还包括来自”reactive.Calc”对象的值。</p>
+<p><strong>有时这些依赖关系会导致函数被过于频繁地重新执行。例如，假设我们有一个输出，它依赖于滑块的值，但是计算成本很高。我们可能希望它只在用户按下按钮时重新执行。</strong></p>
+<p>有两种方法可以实现这一点：一种是使用”isolate()”函数，另一种是”@reactive.event()”注解。</p>
+<p>使用”reactive.isolate()”函数时，代码块在响应式函数内部运行，但不会对代码块内部的响应式输入产生响应式依赖。这意味着该块中的任何响应式输入都不会导致函数重新执行。在下面的示例中，输出依赖于”input.button()”，但不依赖于”input.x()”：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">from shiny import App, reactive, render, ui</span><br><span class="line">import asyncio</span><br><span class="line"></span><br><span class="line">app_ui = ui.page_fluid(</span><br><span class="line">    ui.input_slider(&quot;n&quot;, &quot;N&quot;, min=1, max=100, value=1),</span><br><span class="line">    ui.input_action_button(&quot;compute&quot;, &quot;Compute!&quot;),</span><br><span class="line">    ui.output_text_verbatim(&quot;result&quot;, placeholder=True),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">def server(input, output, session):</span><br><span class="line"></span><br><span class="line">    @output</span><br><span class="line">    @render.text</span><br><span class="line">    async def result():  # 异步编程语法async await ，await asyncio.sleep(2)以模拟长时间的计算过程</span><br><span class="line">        input.compute()        # 这里关联上了ui.input_action_button，此变量改变会使函数失效并且重新运行</span><br><span class="line">        await asyncio.sleep(2) # Wait 2 seconds (to simulate a long computation)</span><br><span class="line"></span><br><span class="line">        with reactive.isolate():  # 该块中的任何输入的改变都不会导致函数重新执行。只有input.compute()改变时才会重新运行</span><br><span class="line">            # Inside this block, we can use input.n() without taking a</span><br><span class="line">            # dependency on it.</span><br><span class="line">            return f&quot;Result: &#123;input.n()&#125;&quot;</span><br><span class="line"></span><br><span class="line">app = App(app_ui, server)</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p>变量不止可以放到input中，还可以自己定义响应变量。响应式变量在需要进行更复杂的响应式操作时非常有用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Create a reactive value with a starting value of &quot;Hello&quot;</span><br><span class="line">x = reactive.Value(&quot;Hello&quot;)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/LYZ.github.io/tags/%E8%AE%A1%E7%AE%97%E6%AF%92%E7%90%86%E5%AD%A6/" rel="tag"># 计算毒理学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/LYZ.github.io/2023/07/01/chemprop%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="chemprop学习笔记">
+      <i class="fa fa-chevron-left"></i> chemprop学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/LYZ.github.io/2023/10/17/LIME%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="LIME学习笔记">
+      LIME学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E9%80%BB%E8%BE%91%E5%8F%8D%E5%BA%94%E6%B5%81"><span class="nav-number">1.</span> <span class="nav-text">网页逻辑反应流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">输入函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%8E%A7%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">输出控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sever-function"><span class="nav-number">3.</span> <span class="nav-text">sever function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B-reactive-programming"><span class="nav-number">4.</span> <span class="nav-text">响应式编程  reactive programming</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%93%8D%E5%BA%94%E5%87%BD%E6%95%B0-Controlling-reactivity-with-isolate-and-reactive-event"><span class="nav-number">4.1.</span> <span class="nav-text">控制响应函数 Controlling reactivity with isolate() and @reactive.event()</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YuZhe Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/LYZ.github.io/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YuZhe Li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/LYZ.github.io/lib/anime.min.js"></script>
+  <script src="/LYZ.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/LYZ.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/LYZ.github.io/js/utils.js"></script>
+
+<script src="/LYZ.github.io/js/motion.js"></script>
+
+
+<script src="/LYZ.github.io/js/schemes/pisces.js"></script>
+
+
+<script src="/LYZ.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
